@@ -1,0 +1,51 @@
+#include "./basicos.h"
+
+int main(){
+
+  Jugador jugador1(ROJO,"Ruben");
+  Jugador jugador2(AZUL,"Jose Manuel");
+ 
+  Territorio territorio1("Zealand");
+  Territorio territorio2("Australasia");
+
+  Dado dado_d6(6),dado_d8(8);
+   
+  cout << "Nombre:" << jugador1.get_nombre_jugador() << endl;
+  cout << "Color: " << jugador1.get_color_jugador() << endl;
+
+  cout << "Nombre:" << jugador2.get_nombre_jugador() << endl;
+  cout << "Color: " << jugador2.get_color_jugador() << endl;
+
+  cout << "Nombre terreno 1:"  << territorio1.get_nombre() << endl;
+  cout << "Nombre terreno 2:"  << territorio2.get_nombre() << endl;
+
+  for(int i=0;i<5;i++)
+    cout << "Lanza dado de 6:" << dado_d6.tirar_dado() << endl;
+
+  for(int j=0;j<5;j++)
+    cout << "Lanza dado de 8:" << dado_d8.tirar_dado() << endl;
+ 
+
+  float conta1=0;
+  float conta2=0;
+  for(int k=0;k<10000;k++)
+    if( dado_d6.tirar_dado() <= dado_d6.tirar_dado())
+       conta1++;     
+    else
+       conta2++;
+
+  cout << conta1 << endl;
+  cout << conta2 << endl;
+ 
+  float pr=conta1/(conta1+conta2);
+
+  cout << pr << endl;
+  
+  Batalla_basica batalla1(3,2);
+
+  batalla1.jugar_batalla();
+
+
+
+
+}
